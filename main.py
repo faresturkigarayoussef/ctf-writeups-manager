@@ -10,7 +10,7 @@ while True:
     if choice == 4:
         break   
 
-def add writeups() : 
+def add_writeups () :  
     title = input("Enter the title of the writeup: ")
     category = input("Enter the category of the writeup: ")
     platform = input("Enter the platform of the writeup: ")
