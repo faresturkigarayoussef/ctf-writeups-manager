@@ -7,8 +7,16 @@ while True:
     print(" 4. to delete writeups ")
     print(" 5. to exit")
     choice = int(input(" Enter your choice : "))
-    if choice == 4:
-        break   
+    if choice == 1:
+        add_writeups()
+    elif choice == 2:
+        show_writeups()
+    elif choice == 3:
+        search_writeups()
+    elif choice == 4:
+        delete_writeups()
+    elif choice == 5:
+        break
 
 def add_writeups () :  
     title = input("Enter the title of the writeup: ")
@@ -44,4 +52,17 @@ def show_writeups() :
         data = json.load(file)
     for writeup in data:
         print(writeup["title"],"--",writeup["category"],"--",writeup["platform"],"--",writeup["difficulty"])
-                
+
+def delete_writeups() :
+    delete_title = input("Enter the title of the writeup to delete: ")
+    with open("writeups.json", "r") as file:
+        data = json.load(file)
+    for i, writeup in enumerate(data):
+        if writeup["title"] == delete_title:
+            data.pop(i)
+            break
+    else:
+        print("Writeup not found.")
+    with open("writeups.json", "w") as file:
+        json.dump(data, file, indent=4)
+        
