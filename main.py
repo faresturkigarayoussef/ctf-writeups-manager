@@ -37,15 +37,48 @@ def add_writeups () :
     with open("writeups.json", "w") as file:
         json.dump(data, file, indent=4)
 def search_writeups() : 
-    search_title = input("Enter the title of the writeup to search: ")
-    with open("writeups.json", "r") as file:
-            data = json.load(file)
-    for writeup in data:
-        if writeup["title"] == search_title:
-            print(writeup)
+    while True:
+        print("~~Welcome to writeups search system~~")
+        print(" 1. to search by title ")
+        print(" 2. to search by category ")
+        print(" 3. to search by platform ")
+        print(" 4. to exit")
+        choice = int(input(" Enter your choice : "))
+         
+        if choice == 1:
+            search_title = input("Enter the title of the writeup to search: ")
+            with open("writeups.json", "r") as file:
+                data = json.load(file)
+            for writeup in data:
+                if writeup["title"] == search_title:
+                    print(writeup)
+                    break
+            else:
+                print("Writeup not found.")
+
+        elif choice == 2:
+            search_title = input("Enter the category of the writeup to search: ")
+            with open("writeups.json", "r") as file:
+                data = json.load(file)
+            for writeup in data:
+                if writeup["category"] == search_title:
+                    print(writeup)
+                    break
+            else:
+                print("Writeup not found.")
+        elif choice == 3:
+            search_title = input("Enter the platform of the writeup to search: ")
+            with open("writeups.json", "r") as file:
+                data = json.load(file)
+            for writeup in data:
+                if writeup["platform"] == search_title:
+                    print(writeup)
+                    break
+            else:
+                print("Writeup not found.")
+
+        elif choice == 4:
             break
-    else:
-        print("Writeup not found.")
 
 def show_writeups() :
     with open("writeups.json", "r") as file:
