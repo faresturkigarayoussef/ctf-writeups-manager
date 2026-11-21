@@ -65,4 +65,4 @@ def delete_writeups() :
         print("Writeup not found.")
     with open("writeups.json", "w") as file:
         json.dump(data, file, indent=4)
-        
+    
