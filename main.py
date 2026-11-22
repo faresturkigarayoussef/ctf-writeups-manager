@@ -1,23 +1,4 @@
 import json
-while True:
-    print("~~Welcome to writeup management system~~")
-    print(" 1. to add writeups ")
-    print(" 2. to show writeups ")
-    print(" 3. to modify writeups ")
-    print(" 4. to delete writeups ")
-    print(" 5. to exit")
-    choice = int(input(" Enter your choice : "))
-    if choice == 1:
-        add_writeups()
-    elif choice == 2:
-        show_writeups()
-    elif choice == 3:
-        search_writeups()
-    elif choice == 4:
-        delete_writeups()
-    elif choice == 5:
-        break
-
 def add_writeups () :  
     title = input("Enter the title of the writeup: ")
     category = input("Enter the category of the writeup: ")
@@ -98,4 +79,41 @@ def delete_writeups() :
         print("Writeup not found.")
     with open("writeups.json", "w") as file:
         json.dump(data, file, indent=4)
-    
+
+def statistics() :
+    with open("writeups.json", "r") as file:
+        data = json.load(file)
+    category_count = {}
+    for writeup in data:
+        category = writeup["category"].lower()
+        if category in category_count:
+            category_count[category] += 1
+        else:
+            category_count[category] = 1
+    total_writeups = len(data)
+    print("Total number of writeups: ", total_writeups)
+    print("Writeups by category:")
+    for category, count in category_count.items():
+        print(f"  {category}: {count} writeups")
+
+while True:
+    print("~~Welcome to writeup management system~~")
+    print(" 1. to add writeups ")
+    print(" 2. to show writeups ")
+    print(" 3. to modify writeups ")
+    print(" 4. to delete writeups ")
+    print(" 5. to show statistics ")
+    print(" 6. to exit")
+    choice = int(input(" Enter your choice : "))
+    if choice == 1:
+        add_writeups()
+    elif choice == 2:
+        show_writeups()
+    elif choice == 3:
+        search_writeups()
+    elif choice == 4:
+        delete_writeups()
+    elif choice == 5:
+        statistics()
+    elif choice == 6:
+        break

@@ -1,1 +1,9 @@
-[]
+[
+    {
+        "title": "morse_code",
+        "category": "forensics",
+        "platform": "iprotect",
+        "difficulty": "easy",
+        "solution": "i uploaded the file to morsecode.world and used audio decoder , i got : 0 1 0 0 1 0 0 1 0 1 0 1 0 0 0 0 0 1 0 1 0 0 1 0 0 1 0 0 1 1 1 1 0 1 0 1 0 1 0 0 0 1 0 0 0 1 0 1 0 1 0 0 0 0 1 1 0 1 0 1 0 1 0 0 0 1 1 1 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 0 0 0 0 1 0 1 0 0 1 0 0 0 1 1 0 1 0 1 0 1 0 0 0 1 0 1 0 1 0 1 1 1 1 1 0 1 0 0 1 0 0 1 0 1 0 1 0 0 1 1 0 1 0 1 1 1 1 1 0 1 0 1 0 1 1 0 0 0 1 1 0 0 1 1 0 1 0 1 0 0 1 0 0 1 0 1 0 0 1 0 0 1 0 1 1 0 0 1 0 1 0 1 1 1 1 1 0 0 1 1 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 0 0 1 0 0 0 1 1 1 1 1 0 1 so i went to cyberchef and used from binary recipe and i got IPROTECT{M0R5E_IS_V3RRY_0LD}"
+    }
+]
